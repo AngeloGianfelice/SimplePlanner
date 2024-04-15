@@ -1,0 +1,12 @@
+<launch>
+    <!-- Launch map_server node to provide map data -->
+    <node name="map_server" pkg="map_server" type="map_server" args="$(find simple_planner)/src/map.yaml" output="screen" />
+
+    <!-- Launch RViz with a pre-configured configuration file -->
+    <node name="rviz" pkg="rviz" type="rviz" args="$(find simple_planner)/config/rviz_config.rviz" output="screen" />
+
+    <!-- Launch custom simple planner node -->
+    <node name="simple_planner" pkg="simple_planner" type="simple_planner" output="screen">
+        <!-- Add any necessary parameters here -->
+    </node>
+</launch>

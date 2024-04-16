@@ -6,6 +6,32 @@
 
 #IncludeRegexTransform: 
 
+/home/angelo/catkin_ws/src/simple_planner/src/rp_stuff/dmap.h
+grid.h
+/home/angelo/catkin_ws/src/simple_planner/src/rp_stuff/grid.h
+deque
+-
+
+/home/angelo/catkin_ws/src/simple_planner/src/rp_stuff/dmap_localizer.cpp
+dmap_localizer.h
+/home/angelo/catkin_ws/src/simple_planner/src/rp_stuff/dmap_localizer.h
+iostream
+-
+fstream
+-
+
+/home/angelo/catkin_ws/src/simple_planner/src/rp_stuff/dmap_localizer.h
+cmath
+-
+Eigen/Core
+-
+Eigen/Geometry
+-
+dmap.h
+/home/angelo/catkin_ws/src/simple_planner/src/rp_stuff/dmap.h
+grid_map.h
+/home/angelo/catkin_ws/src/simple_planner/src/rp_stuff/grid_map.h
+
 /home/angelo/catkin_ws/src/simple_planner/src/rp_stuff/draw_helpers.h
 opencv2/opencv.hpp
 -
@@ -27,10 +53,6 @@ limits
 -
 draw_helpers.h
 /home/angelo/catkin_ws/src/simple_planner/src/rp_stuff/draw_helpers.h
-
-/home/angelo/catkin_ws/src/simple_planner/src/rp_stuff/grid_map.cpp
-grid_map.h
-/home/angelo/catkin_ws/src/simple_planner/src/rp_stuff/grid_map.h
 
 /home/angelo/catkin_ws/src/simple_planner/src/rp_stuff/grid_map.h
 grid.h

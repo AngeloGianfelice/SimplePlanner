@@ -3,6 +3,7 @@
 #include "geometry_msgs/PoseWithCovarianceStamped.h"
 #include "nav_msgs/Path.h"
 #include "rp_stuff/grid_map.cpp"
+#include "rp_stuff/dmap_localizer.h"
 #include <queue>
 #include <tf/transform_broadcaster.h>
 #include <iostream>
@@ -17,11 +18,23 @@ struct point{
   float cost;
   float heuristic;
   point* parent;
-  point(int _x, int _y, double _cost = 0.0, double _heuristic = 0.0, point* _parent = nullptr)//point constructor
-        : x(_x), y(_y), cost(_cost), heuristic(_heuristic), parent(_parent) {}
+  point(int x, int y, double cost = 0.0, double heuristic = 0.0, point* parent = nullptr)//point constructor
+        : x(x), y(y), cost(cost), heuristic(heuristic), parent(parent) {}
 
-  float cost_Astar() const { return cost + heuristic; } //Note:for A* algorithm f(n)=g(n)+h(n)
+  float total_cost() const { return cost + heuristic; } //Note:for A* algorithm f(n)=g(n)+h(n)
 };
+
+// Define a comparison function for nodes in the priority queue
+struct CompareNode {
+    bool operator()(const point* lhs, const point* rhs) const {
+        return lhs->total_cost() > rhs->total_cost();
+    }
+};
+
+// Heuristic function (Euclidean distance)
+double euclideanDistance(int x1, int y1, int x2, int y2) {
+    return sqrt(pow(x1 - x2, 2) + pow(y1 - y2, 2));
+}
 
 //initail pose 
 geometry_msgs::PoseWithCovarianceStamped start;
@@ -45,13 +58,13 @@ void compute_path(const geometry_msgs::PoseWithCovarianceStamped &start, const g
     string filename="/home/angelo/catkin_ws/src/simple_planner/src/maze.jpg";
 
     //initialize grid_map
-    GridMap grid_map(0, 0, 0.01);
+    GridMap grid_map(0, 0, resolution);
     grid_map.loadFromImage(filename.c_str(), resolution);
-
+    
     // Run A* algorithm
     point start_cell(start_x, start_y);
     point goal_cell(goal_x, goal_y);
-    std::vector<point*> path = AStar(start_cell, goal_cell);
+    vector<point*> path = AStar(start_cell, goal_cell);
 
     // Create a nav_msgs::Path message
     nav_msgs::Path path_msg;
@@ -95,7 +108,7 @@ int main(int argc, char **argv) {
   //initialize ros
   ros::init(argc, argv, "simple_planner");
 
-  //defince necessary ros nodes
+  //defince necessary ros nodeHandles
   ros::NodeHandle init_node;
   ros::NodeHandle goal_node;
   ros::NodeHandle plan_node;
@@ -105,7 +118,7 @@ int main(int argc, char **argv) {
   ros::Subscriber goal_sub = goal_node.subscribe("move_base_simple/goal", 10, handle_goal);
   plan_pub = plan_node.advertise<nav_msgs::Path>("nav_msgs/Path", 1);
 
-  //start ros
+  //ROS loop
   ros::Rate loop_rate(10);
   while(ros::ok()){
     ros::spinOnce();

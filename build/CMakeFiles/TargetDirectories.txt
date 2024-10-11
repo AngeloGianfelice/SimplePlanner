@@ -75,17 +75,3 @@
 /home/angelo/catkin_ws/build/simple_planner/src/CMakeFiles/edit_cache.dir
 /home/angelo/catkin_ws/build/simple_planner/src/CMakeFiles/test.dir
 /home/angelo/catkin_ws/build/simple_planner/src/CMakeFiles/simple_planner.dir
-/home/angelo/catkin_ws/build/simple_planner/src/rp_stuff/CMakeFiles/install/strip.dir
-/home/angelo/catkin_ws/build/simple_planner/src/rp_stuff/CMakeFiles/grid_main.dir
-/home/angelo/catkin_ws/build/simple_planner/src/rp_stuff/CMakeFiles/dmap_localizer_test.dir
-/home/angelo/catkin_ws/build/simple_planner/src/rp_stuff/CMakeFiles/rp_library.dir
-/home/angelo/catkin_ws/build/simple_planner/src/rp_stuff/CMakeFiles/test_grid_map.dir
-/home/angelo/catkin_ws/build/simple_planner/src/rp_stuff/CMakeFiles/dmap_test_in_class.dir
-/home/angelo/catkin_ws/build/simple_planner/src/rp_stuff/CMakeFiles/rp_simulator.dir
-/home/angelo/catkin_ws/build/simple_planner/src/rp_stuff/CMakeFiles/test.dir
-/home/angelo/catkin_ws/build/simple_planner/src/rp_stuff/CMakeFiles/dmap_grid_localizer_test.dir
-/home/angelo/catkin_ws/build/simple_planner/src/rp_stuff/CMakeFiles/edit_cache.dir
-/home/angelo/catkin_ws/build/simple_planner/src/rp_stuff/CMakeFiles/rebuild_cache.dir
-/home/angelo/catkin_ws/build/simple_planner/src/rp_stuff/CMakeFiles/list_install_components.dir
-/home/angelo/catkin_ws/build/simple_planner/src/rp_stuff/CMakeFiles/install.dir
-/home/angelo/catkin_ws/build/simple_planner/src/rp_stuff/CMakeFiles/install/local.dir

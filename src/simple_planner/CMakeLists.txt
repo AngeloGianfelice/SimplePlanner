@@ -14,6 +14,7 @@ find_package(catkin REQUIRED COMPONENTS
   cv_bridge
   roscpp
   geometry_msgs
+  roslib
 )
 
 find_package(OpenCV REQUIRED)

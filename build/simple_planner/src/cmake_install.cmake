@@ -37,9 +37,3 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for each subdirectory.
-  include("/home/angelo/catkin_ws/build/simple_planner/src/rp_stuff/cmake_install.cmake")
-
-endif()
-

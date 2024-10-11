@@ -622,97 +622,6 @@ simple_planner/fast:
 	$(MAKE) -f simple_planner/src/CMakeFiles/simple_planner.dir/build.make simple_planner/src/CMakeFiles/simple_planner.dir/build
 .PHONY : simple_planner/fast
 
-#=============================================================================
-# Target rules for targets named grid_main
-
-# Build rule for target.
-grid_main: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 grid_main
-.PHONY : grid_main
-
-# fast build rule for target.
-grid_main/fast:
-	$(MAKE) -f simple_planner/src/rp_stuff/CMakeFiles/grid_main.dir/build.make simple_planner/src/rp_stuff/CMakeFiles/grid_main.dir/build
-.PHONY : grid_main/fast
-
-#=============================================================================
-# Target rules for targets named dmap_localizer_test
-
-# Build rule for target.
-dmap_localizer_test: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 dmap_localizer_test
-.PHONY : dmap_localizer_test
-
-# fast build rule for target.
-dmap_localizer_test/fast:
-	$(MAKE) -f simple_planner/src/rp_stuff/CMakeFiles/dmap_localizer_test.dir/build.make simple_planner/src/rp_stuff/CMakeFiles/dmap_localizer_test.dir/build
-.PHONY : dmap_localizer_test/fast
-
-#=============================================================================
-# Target rules for targets named rp_library
-
-# Build rule for target.
-rp_library: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 rp_library
-.PHONY : rp_library
-
-# fast build rule for target.
-rp_library/fast:
-	$(MAKE) -f simple_planner/src/rp_stuff/CMakeFiles/rp_library.dir/build.make simple_planner/src/rp_stuff/CMakeFiles/rp_library.dir/build
-.PHONY : rp_library/fast
-
-#=============================================================================
-# Target rules for targets named test_grid_map
-
-# Build rule for target.
-test_grid_map: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test_grid_map
-.PHONY : test_grid_map
-
-# fast build rule for target.
-test_grid_map/fast:
-	$(MAKE) -f simple_planner/src/rp_stuff/CMakeFiles/test_grid_map.dir/build.make simple_planner/src/rp_stuff/CMakeFiles/test_grid_map.dir/build
-.PHONY : test_grid_map/fast
-
-#=============================================================================
-# Target rules for targets named dmap_test_in_class
-
-# Build rule for target.
-dmap_test_in_class: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 dmap_test_in_class
-.PHONY : dmap_test_in_class
-
-# fast build rule for target.
-dmap_test_in_class/fast:
-	$(MAKE) -f simple_planner/src/rp_stuff/CMakeFiles/dmap_test_in_class.dir/build.make simple_planner/src/rp_stuff/CMakeFiles/dmap_test_in_class.dir/build
-.PHONY : dmap_test_in_class/fast
-
-#=============================================================================
-# Target rules for targets named rp_simulator
-
-# Build rule for target.
-rp_simulator: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 rp_simulator
-.PHONY : rp_simulator
-
-# fast build rule for target.
-rp_simulator/fast:
-	$(MAKE) -f simple_planner/src/rp_stuff/CMakeFiles/rp_simulator.dir/build.make simple_planner/src/rp_stuff/CMakeFiles/rp_simulator.dir/build
-.PHONY : rp_simulator/fast
-
-#=============================================================================
-# Target rules for targets named dmap_grid_localizer_test
-
-# Build rule for target.
-dmap_grid_localizer_test: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 dmap_grid_localizer_test
-.PHONY : dmap_grid_localizer_test
-
-# fast build rule for target.
-dmap_grid_localizer_test/fast:
-	$(MAKE) -f simple_planner/src/rp_stuff/CMakeFiles/dmap_grid_localizer_test.dir/build.make simple_planner/src/rp_stuff/CMakeFiles/dmap_grid_localizer_test.dir/build
-.PHONY : dmap_grid_localizer_test/fast
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -761,13 +670,6 @@ help:
 	@echo "... rosgraph_msgs_generate_messages_cpp"
 	@echo "... roscpp_generate_messages_eus"
 	@echo "... simple_planner"
-	@echo "... grid_main"
-	@echo "... dmap_localizer_test"
-	@echo "... rp_library"
-	@echo "... test_grid_map"
-	@echo "... dmap_test_in_class"
-	@echo "... rp_simulator"
-	@echo "... dmap_grid_localizer_test"
 .PHONY : help
 
 

@@ -1,12 +1,21 @@
 <launch>
+
+    <arg name="distance" default="euclidean" />
+    <arg name="filename" default="maze.jpg" />
+    <arg name="threshold" default="127" />
+
+    <param name="/distance" value="$(arg distance)" />
+    <param name="/filename" value="$(arg filename)" />
+    <param name="/threshold" value="$(arg threshold)" />
+
     <!-- Launch map_server node to provide map data -->
     <node name="map_server" pkg="map_server" type="map_server" args="$(find simple_planner)/src/maps/map.yaml" output="screen" />
 
-    <!-- Launch RViz with a pre-configured configuration file -->
-    <node name="rviz" pkg="rviz" type="rviz" args="$(find simple_planner)/config/rviz_config.rviz" output="screen" />
-
     <!-- Launch custom simple planner node -->
-    <node name="simple_planner" pkg="simple_planner" type="simple_planner" output="screen">
+    <node name="simple_planner" pkg="simple_planner" type="simple_planner" output="screen" />
         <!-- Add any necessary parameters here -->
-    </node>
+
+    <!-- Launch RViz with a pre-configured configuration file -->
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find simple_planner)/src/config/rviz_config.rviz" />
+
 </launch>

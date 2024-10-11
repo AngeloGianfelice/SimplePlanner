@@ -1,2 +1,7 @@
+# Visual Studio Code settings
 .vscode/
-.catkin_workspace/
+.vscode/settings.json
+.vscode/tasks.json
+
+# Ignore all hidden files and folders
+.*

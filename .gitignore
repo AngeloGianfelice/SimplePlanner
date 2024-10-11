@@ -1,7 +1,0 @@
-# Visual Studio Code settings
-.vscode/
-.vscode/settings.json
-.vscode/tasks.json
-
-# Ignore all hidden files and folders
-.*

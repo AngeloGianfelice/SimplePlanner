@@ -1,6 +1,6 @@
 set(_CATKIN_CURRENT_PACKAGE "simple_planner")
 set(simple_planner_VERSION "0.0.0")
-set(simple_planner_MAINTAINER "angelo <angelo@todo.todo>")
+set(simple_planner_MAINTAINER "Angelo Gianfelice <angelogianfelice1999@gmail.com>")
 set(simple_planner_PACKAGE_FORMAT "2")
 set(simple_planner_BUILD_DEPENDS "roscpp")
 set(simple_planner_BUILD_EXPORT_DEPENDS "roscpp")

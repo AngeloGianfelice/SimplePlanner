@@ -15,6 +15,7 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   geometry_msgs
   roslib
+  visualization_msgs
 )
 
 find_package(OpenCV REQUIRED)

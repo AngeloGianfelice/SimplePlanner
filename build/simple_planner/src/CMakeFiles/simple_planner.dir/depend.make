@@ -8,6 +8,7 @@ simple_planner/src/CMakeFiles/simple_planner.dir/simple_planner.cpp.o: /opt/ros/
 simple_planner/src/CMakeFiles/simple_planner.dir/simple_planner.cpp.o: /opt/ros/noetic/include/geometry_msgs/PoseWithCovariance.h
 simple_planner/src/CMakeFiles/simple_planner.dir/simple_planner.cpp.o: /opt/ros/noetic/include/geometry_msgs/PoseWithCovarianceStamped.h
 simple_planner/src/CMakeFiles/simple_planner.dir/simple_planner.cpp.o: /opt/ros/noetic/include/geometry_msgs/Quaternion.h
+simple_planner/src/CMakeFiles/simple_planner.dir/simple_planner.cpp.o: /opt/ros/noetic/include/geometry_msgs/Vector3.h
 simple_planner/src/CMakeFiles/simple_planner.dir/simple_planner.cpp.o: /opt/ros/noetic/include/nav_msgs/Path.h
 simple_planner/src/CMakeFiles/simple_planner.dir/simple_planner.cpp.o: /opt/ros/noetic/include/ros/advertise_options.h
 simple_planner/src/CMakeFiles/simple_planner.dir/simple_planner.cpp.o: /opt/ros/noetic/include/ros/advertise_service_options.h
@@ -66,7 +67,9 @@ simple_planner/src/CMakeFiles/simple_planner.dir/simple_planner.cpp.o: /opt/ros/
 simple_planner/src/CMakeFiles/simple_planner.dir/simple_planner.cpp.o: /opt/ros/noetic/include/ros/wall_timer.h
 simple_planner/src/CMakeFiles/simple_planner.dir/simple_planner.cpp.o: /opt/ros/noetic/include/ros/wall_timer_options.h
 simple_planner/src/CMakeFiles/simple_planner.dir/simple_planner.cpp.o: /opt/ros/noetic/include/rosconsole/macros_generated.h
+simple_planner/src/CMakeFiles/simple_planner.dir/simple_planner.cpp.o: /opt/ros/noetic/include/std_msgs/ColorRGBA.h
 simple_planner/src/CMakeFiles/simple_planner.dir/simple_planner.cpp.o: /opt/ros/noetic/include/std_msgs/Header.h
+simple_planner/src/CMakeFiles/simple_planner.dir/simple_planner.cpp.o: /opt/ros/noetic/include/visualization_msgs/Marker.h
 simple_planner/src/CMakeFiles/simple_planner.dir/simple_planner.cpp.o: /opt/ros/noetic/include/xmlrpcpp/XmlRpcDecl.h
 simple_planner/src/CMakeFiles/simple_planner.dir/simple_planner.cpp.o: /opt/ros/noetic/include/xmlrpcpp/XmlRpcValue.h
 simple_planner/src/CMakeFiles/simple_planner.dir/simple_planner.cpp.o: /usr/include/opencv4/opencv2/calib3d.hpp

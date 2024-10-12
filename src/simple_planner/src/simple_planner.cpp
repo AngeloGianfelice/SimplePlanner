@@ -6,6 +6,7 @@
 #include <iostream>
 #include <opencv2/opencv.hpp>
 #include <ros/package.h>
+#include <visualization_msgs/Marker.h>
 
 using namespace std;
 using namespace cv;
@@ -18,7 +19,9 @@ float origin_x= -5.0;
 float origin_y= -5.0;
 int my_threshold = 127;
 int rows,cols;
+//necessary pos publishers definition
 ros::Publisher plan_pub;
+ros::Publisher marker_pub;
 
 //point in the map
 struct point {
@@ -86,6 +89,28 @@ bool isInside(int x, int y){
         return true;
     }
     else return false; 
+}
+
+//markers handling
+void createMarker(const geometry_msgs::Point& position, int id, const std_msgs::ColorRGBA& color) {
+    visualization_msgs::Marker marker;
+    marker.header.frame_id = "map";
+    marker.header.stamp = ros::Time::now();
+    marker.type = visualization_msgs::Marker::SPHERE;
+    marker.action = visualization_msgs::Marker::ADD;
+    marker.id = id;
+    
+    marker.pose.position = position;
+    marker.pose.orientation.w = 1.0;
+    
+    marker.scale.x = 1;
+    marker.scale.y = 1;
+    marker.scale.z = 1;
+    
+    marker.color = color;
+    marker.lifetime = ros::Duration();
+    
+    marker_pub.publish(marker);
 }
 
 // A* path planning algorithm
@@ -158,8 +183,33 @@ void AStar(path my_path, vector<vector<int>> grid){
                 path_msg.poses.push_back(pose);
                 curr = curr->parent;
             }
+
+            //publishing the path
             plan_pub.publish(path_msg);
             ROS_INFO("Path Published!");
+
+            // Get the first pose
+            geometry_msgs::PoseStamped first_pose = path_msg.poses.back();
+    
+            // Get the last pose
+            geometry_msgs::PoseStamped last_pose = path_msg.poses.front();
+
+            // Create markers at start and end positions
+            std_msgs::ColorRGBA start_color;
+            start_color.r = 0.0;
+            start_color.g = 1.0;
+            start_color.b = 0.0;
+            start_color.a = 1.0;
+    
+            std_msgs::ColorRGBA end_color;
+            end_color.r = 1.0;
+            end_color.g = 0.0;
+            end_color.b = 0.0;
+            end_color.a = 1.0;
+
+            createMarker(first_pose.pose.position, 0, start_color);
+            createMarker(last_pose.pose.position, 1, end_color);
+
     } else {
         ROS_WARN("No valid path found!");
     }
@@ -212,8 +262,8 @@ void compute_path(){
 
 }
 
+/***************callback functions******************/
 
-//callback functions
 //initial pose callback
 void handle_initial(const geometry_msgs::PoseWithCovarianceStamped &start){
 
@@ -303,6 +353,7 @@ int main(int argc, char **argv) {
     ros::Subscriber initial_sub = init_node.subscribe("initialpose", 10, handle_initial);
     ros::Subscriber goal_sub = goal_node.subscribe("move_base_simple/goal", 10, handle_goal);
     plan_pub = plan_node.advertise<nav_msgs::Path>("nav_msgs/Path", 1);
+    marker_pub = plan_node.advertise<visualization_msgs::Marker>("visualization_marker", 10);
 
     //ROS loop
     ros::Rate loop_rate(1);

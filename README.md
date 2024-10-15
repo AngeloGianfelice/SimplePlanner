@@ -88,7 +88,7 @@ The project is mainly handled by 2 different ros nodes (as shown in picture belo
      - */initialpose*: Receives starting position from rviz user input.
      - */move_base_simple/goal*: Receives goal position from rviz user input.
    - Published Topics:
-     - */nav_msgs*: Publishes the computed path.
+     - */nav_msgs/Path*: Publishes the computed path.
      - */visualization_marker*: Publishes rviz markers.
 
 ![rqt_graph](img/rosgraph.png)

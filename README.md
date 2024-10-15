@@ -6,7 +6,6 @@ This project has been realized for the Robot Programming course of the Master of
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [Workspace Setup](#workspace-setup)
-- [Building the Project](#building-the-project)
 - [Running the Project](#running-the-project)
 - [Description and Features](#description-and-features)
 - [Results](#results)
@@ -51,16 +50,6 @@ You can install ROS by following the official [ROS installation guide](http://wi
     catkin_make
     source devel/setup.bash
     ```
-
-## Building the Project
-
-To build the project, use:
-
-```bash
-cd ~/catkin_ws
-catkin_make
-source devel/setup.bash
-```
 
 ## Running the Project 
 
